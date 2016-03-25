@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_case_id: 
+  description: MyText
+  position: 1
+
+two:
+  test_case_id: 
+  description: MyText
+  position: 1
