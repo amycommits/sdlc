@@ -1,0 +1,25 @@
+<%= form_for(@test_case_step_result, remote: true) do |f| %>
+  <% if @test_case_step_result.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_case_step_result.errors.count, "error") %> prohibited this test_case_step_result from being saved:</h2>
+
+      <ul>
+      <% @test_case_step_result.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="testing_state">
+    <%= f.hidden_field :test_case_step_id %>
+    <input type="radio" name="test_case_step_result[state]" value="test_pass" class="test_pass"></input>
+    <input type="radio" name="test_case_step_result[state]" value="untested" class="untested" checked></input>
+    <input type="radio" name="test_case_step_result[state]" value="test_fail" class="test_fail"></input>
+    <div class="field failure_details">
+      <%= f.label :details %><br>
+      <%= f.text_area :details %>
+      <%= f.submit 'Done'%>
+    </div>
+  </div>
+<% end %>

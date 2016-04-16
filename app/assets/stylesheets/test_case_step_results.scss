@@ -1,0 +1,45 @@
+@import "template";
+//some variables for the table width:
+$test_step_column: .2;
+$expected_result_column: .2;
+$puf_column: .05;
+$status_span_time: .15;
+$status_span_state: .03;
+$status_span_details: 1 - $test_step_column - $expected_result_column - $puf_column - $status_span_time - $status_span_state;
+
+.failure_details { 
+		display: none;
+	}
+.testing_state .test_fail:checked ~ .failure_details{
+//tilde is sibling > direct descendant
+		display: inline-block;
+		*{
+			display: inline-block;
+		}
+	}
+
+#testing_table {
+	width: $bodyWidth;
+	.result_details {
+		float: right;
+		align: left;
+	}
+	th:nth-child(1), td:nth-child(1){
+		width: $bodyWidth * $test_step_column;
+	}
+	th:nth-child(2), td:nth-child(2){
+		width: $bodyWidth * $expected_result_column;
+	}
+	th:nth-child(3), td:nth-child(3){
+		width: $bodyWidth * $puf_column;
+	}
+	th:nth-child(4), td:nth-child(4){
+		width: $bodyWidth * .08;
+	}
+}
+
+span.decorator_overview{
+	margin: auto;
+}
+
+
