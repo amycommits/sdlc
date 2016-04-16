@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  resources :test_case_step_results
+  resources :test_case_steps
+  resources :test_cases
+  resources :requirements
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+    root 'test_cases#index'  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,6 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="contents-container">
+<table id="testing_table">
+<tr>
+	<th>Test Step</th>
+	<th>Expected Result</th>
+	<th>
+		<span class="test_pass" title="Pass"> P </span>
+		<span clss="untested" title="Untested"> U </span>
+		<span class="test_fail" title="Fail"> F </span>
+	</th>
+	<th>
+		<span class="result_time_ago">Last Date</span>
+		<span class="decorator_overview result_state test_pass">State</span>
+		<span class="decorator_overview result_details">Details</span>
+	</th>
 
+</tr>
+ <% @test_case.test_case_steps.each do |step| %>
+	<tr>
+		<td><%= step.description %></td>
+		<td><%= step.expected_result%></td>
+		<td><% @test_case_step_result= step.test_case_step_results.new %>
+		<%= render 'test_case_step_results/form' %>
+		</td>
+		<td class="decorate_overview_container">
+			<%= step.test_case_step_results.last(2).first.decorate.overview %>
+		</td>
+	</tr>
+
+<%end%>
+
+
+
+</table>
 
 
 <%= link_to 'Edit', edit_test_case_path(@test_case) %> |
 <%= link_to 'Back', test_cases_path %>
+</div>

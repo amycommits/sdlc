@@ -1,6 +1,7 @@
 class TestCasesController < ApplicationController
   before_action :set_test_case, only: [:show, :edit, :update, :destroy]
 
+
   # GET /test_cases
   # GET /test_cases.json
   def index
@@ -10,11 +11,19 @@ class TestCasesController < ApplicationController
   # GET /test_cases/1
   # GET /test_cases/1.json
   def show
+    @test_case = TestCase.test_case_child_includes.find(params[:id])
+  end
+  def overview_decorator
+    step.test_case_step_results.last(2).first.decorate.overview
   end
 
   # GET /test_cases/new
   def new
     @test_case = TestCase.new
+    #@test_case_steps = @test_case.test_case_steps.build
+    20.times do
+      test_case_step=@test_case.test_case_steps.build
+    end
     
   end
 
@@ -28,6 +37,9 @@ class TestCasesController < ApplicationController
   def create
     #raise params.inspect
     @test_case = TestCase.new(test_case_params)
+    #3.times do
+      test_case_step=@test_case.test_case_steps.build
+    #end
 
     respond_to do |format|
       if @test_case.save
@@ -73,6 +85,7 @@ class TestCasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_case_params
-      params.require(:test_case).permit(:name, :requirement_ids=>[])
+      params.require(:test_case).permit(:name, :requirement_ids=>[],test_case_steps_attributes: [:id,:description, :expected_result,:_destroy])
     end
+
 end
