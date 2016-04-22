@@ -1,0 +1,52 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+	background: #e2e2e2;
+  border-width: 0;
+	border-bottom: 1px solid #B8B8B8;
+	font-weight: normal !important;
+  padding: 15px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+tr:nth-child(odd) {
+  background: #ff3360;
+}
+
+tr:nth-child(even) {
+  background: #c21749;
+}
+
+
+thead {
+ 
+  
+  th {
+    background: #ddd;
+    font-size: 13px;
+  }
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+}
+.gu-hide {
+  display: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+.gu-mirror {
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}	
