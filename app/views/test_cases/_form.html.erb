@@ -14,18 +14,22 @@
 <div class="show_requirements">
      <%= f.collection_check_boxes :requirement_ids, current_requirements,:id,:name %> 
 </div>
-<div class="show_steps">
-<table>
+<div class="show_steps" >
+<table >
+<theader>
    <tr>
       <th>description</th>
       <th>expected results </th>
    </tr>
+  </theader>
+<tbody id="container-table">
   <%= f.fields_for :test_case_steps do |step| %>
   <tr>
     <td><%= step.text_field :description %> </td>
     <td><%= step.text_field :expected_result %></td>
   </tr>
   <% end %>
+  </tbody>
 </table>
 </div>
 

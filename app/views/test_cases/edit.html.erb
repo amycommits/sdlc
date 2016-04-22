@@ -1,6 +1,14 @@
 <h1>Editing Test Case</h1>
-
+<div id="additional_test_cases">insert here</div>
 <%= render 'form' %>
+<h1>Add additional Fields</h1>
+<select>
 
+ <% 10.times do |index| %>
+
+  <% @str= "<option value=\"#{(index+1)*5}\">#{(index+1)*5}</option>".html_safe %>
+    <%= @str %>
+ <%end%>
+</select>
 <%= link_to 'Show', @test_case %> |
 <%= link_to 'Back', test_cases_path %>

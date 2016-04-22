@@ -82,3 +82,9 @@ th {
   background-color: $themeCompliment;
   color: $themeLight;
 }
+tr:nth-child(even) td {
+  background-color: $themeMedium;
+}
+tr:nth-child(odd) td {
+  background-color: $themeLight;
+}

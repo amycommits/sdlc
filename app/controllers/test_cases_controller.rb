@@ -21,7 +21,7 @@ class TestCasesController < ApplicationController
   def new
     @test_case = TestCase.new
     #@test_case_steps = @test_case.test_case_steps.build
-    20.times do
+    3.times do
       test_case_step=@test_case.test_case_steps.build
     end
     
