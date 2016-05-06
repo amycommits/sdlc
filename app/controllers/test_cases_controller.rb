@@ -69,6 +69,11 @@ class TestCasesController < ApplicationController
   # DELETE /test_cases/1
   # DELETE /test_cases/1.json
   def destroy
+    @test_case=TestCase.find(params[:id])
+    #@test_case_step = TestCaseStep.find_by(test_case_id: @test_case_id.id)
+    #@test_case_step_result = TestCaseStepResult.find_by(test_case_step_id: @test_case_step.id)
+    #@test_case_step = TestCaseStep.find_by(test_case_id: @test_case_id)
+    
     @test_case.destroy
     respond_to do |format|
       format.html { redirect_to test_cases_url, notice: 'Test case was successfully destroyed.' }

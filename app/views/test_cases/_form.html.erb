@@ -16,27 +16,37 @@
 </div>
 <div class="show_steps" >
 <table >
-<theader>
-   <tr>
+  <theader>
+    <tr>
       <th>description</th>
       <th>expected results </th>
-   </tr>
+    </tr>
   </theader>
 <tbody id="container-table">
   <%= f.fields_for :test_case_steps do |step| %>
-  <tr>
-    <td><%= step.text_field :description %> </td>
-    <td><%= step.text_field :expected_result %></td>
-  </tr>
+    <tr>
+      <td><%= step.text_field :description %> </td>
+      <td><%= step.text_field :expected_result %></td>
+    </tr>
   <% end %>
   </tbody>
 </table>
 </div>
 
-
-
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<div class="additionalRowButtons">
+  <select id="addRowNumber">
+    <option value="1">1</option>  
+    <% 10.times do |index| %>
+      <% @str= "<option value=\"#{(index+1)*5}\">#{(index+1)*5}</option>".html_safe %>
+      <%= @str %>
+    <%end%>
+  </select>
+
+
+  
+</div>
+<button id="addRowBtn">Add Rows</button>
