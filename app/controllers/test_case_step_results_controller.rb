@@ -30,6 +30,7 @@ class TestCaseStepResultsController < ApplicationController
       if @test_case_step_result.save
         format.html { redirect_to @test_case_step_result, notice: 'Test case step result was successfully created.' }
         format.json { render :show, status: :created, location: @test_case_step_result }
+        format.js #{ render :text => @test_case_step_result.decorate.overview}
       else
         format.html { render :new }
         format.json { render json: @test_case_step_result.errors, status: :unprocessable_entity }

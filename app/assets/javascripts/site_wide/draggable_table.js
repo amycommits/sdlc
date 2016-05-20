@@ -1,5 +1,6 @@
 $(document).ready(function(){
 var container = document.getElementById('container-table');
+if (container) {
 var rows = container.children;
 
 // forEach method from http://toddmotto.com/ditch-the-array-foreach-call-nodelist-hack/
@@ -17,4 +18,5 @@ sortableTable.on('dragend', function() {
     row.dataset.rowPosition = index + 1;
   });
 });
+};
 });

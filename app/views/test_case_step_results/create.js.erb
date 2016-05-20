@@ -1,0 +1,4 @@
+//@test_case_step_result.decorate.overview
+
+$("#step-<%= @test_case_step_result.test_case_step_id %> .decorate_overview_container")
+	.html("<%=@test_case_step_result.decorate.overview%>").highlight();

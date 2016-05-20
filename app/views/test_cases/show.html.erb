@@ -15,7 +15,7 @@
 
 </tr>
  <% @test_case.test_case_steps.each do |step| %>
-	<tr>
+	<tr id="step-<%=step.id%>">
 		<td><%= step.description %></td>
 		<td><%= step.expected_result%></td>
 		<td><% @test_case_step_result= step.test_case_step_results.new %>

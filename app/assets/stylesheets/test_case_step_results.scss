@@ -42,15 +42,8 @@ span.decorator_overview{
 
 
 .decorator_overview {
-	&.result_state.test_fail {
-		background-color: $themeContrast;
-	}
-	&.result_state.test_pass {
-		background-color: $themeDark;
-		color: $themeLight;
-	}
 	&.result_state {
-		float: right;
+		text-align: right;
 	}
 	&.result_details {
 		display: block;
@@ -59,4 +52,15 @@ span.decorator_overview{
 		font-style: oblique;
 		font-size: 1.2em;
 	}
+}
+
+.decorate_overview_container {
+	div.test_fail {
+		background-color: $themeContrast;
+	}
+	div.test_pass {
+		background-color: $themeDark;
+		color: $themeLight;
+	}
+	
 }
